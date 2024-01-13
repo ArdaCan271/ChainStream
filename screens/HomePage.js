@@ -32,7 +32,6 @@ const trendingData = [
 const HomePage = () => {
 
   const renderItem = ({item}) => {
-    console.log(item);
     return (
       <HomeScrollerProductNew
       bgColor={item}/>

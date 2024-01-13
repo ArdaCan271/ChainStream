@@ -9,6 +9,7 @@ const HomeScrollerNew = (props) => {
       </View>
       <FlatList
       horizontal={true}
+      showsHorizontalScrollIndicator={false}
       data={props.productData}
       renderItem={props.renderItem}/>
     </View>
