@@ -22,7 +22,7 @@ const styles = StyleSheet.create({
     backgroundColor: "darkgray",
     overflow: "hidden",
     padding: 8,
-    elevation: 4,
+    elevation: 2,
   },
   row1: {
     width: 40,

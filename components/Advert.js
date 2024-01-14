@@ -19,8 +19,8 @@ const styles = StyleSheet.create({
     alignItems: "flex-start",
     borderRadius: 10,
     padding: 8,
-    elevation: 5,
-    marginVertical: 10,
+    elevation: 2,
+    marginVertical: 15,
   },
   advertText: {
     fontSize: 18,

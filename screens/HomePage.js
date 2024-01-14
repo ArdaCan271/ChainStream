@@ -9,11 +9,13 @@ import Ionicons from "react-native-vector-icons/Ionicons";
 
 const whatsNewData = [
   { id: 4, bgColor: "#B0E0E6", height: getRandomNumber(120, 180), width: getRandomNumber(180, 280) },
-  { id: 5, bgColor: "#B19CD9", height: getRandomNumber(120, 180), width: getRandomNumber(180, 280) },
   { id: 1, bgColor: "#E6E6FA", height: getRandomNumber(120, 180), width: getRandomNumber(180, 280) },
+  { id: 5, bgColor: "#B19CD9", height: getRandomNumber(120, 180), width: getRandomNumber(180, 280) },
   { id: 3, bgColor: "#E1BEE7", height: getRandomNumber(120, 180), width: getRandomNumber(180, 280) },
-  { id: 6, bgColor: "#FFCDD2", height: getRandomNumber(120, 180), width: getRandomNumber(180, 280) },
+  { id: 7, bgColor: "#FFCDD2", height: getRandomNumber(120, 180), width: getRandomNumber(180, 280) },
+  { id: 8, bgColor: "#E6E6FA", height: getRandomNumber(120, 180), width: getRandomNumber(180, 280) },
   { id: 2, bgColor: "#C5CBE1", height: getRandomNumber(120, 180), width: getRandomNumber(180, 280) },
+  { id: 6, bgColor: "#FFCDD2", height: getRandomNumber(120, 180), width: getRandomNumber(180, 280) },
 ];
 
 const trendingNowData = [
@@ -21,8 +23,10 @@ const trendingNowData = [
   { id: 3, bgColor: "#E1BEE7", height: getRandomNumber(120, 180), width: getRandomNumber(180, 280) },
   { id: 2, bgColor: "#C5CBE1", height: getRandomNumber(120, 180), width: getRandomNumber(180, 280) },
   { id: 4, bgColor: "#B0E0E6", height: getRandomNumber(120, 180), width: getRandomNumber(180, 280) },
+  { id: 8, bgColor: "#E1BEE7", height: getRandomNumber(120, 180), width: getRandomNumber(180, 280) },
   { id: 5, bgColor: "#B19CD9", height: getRandomNumber(120, 180), width: getRandomNumber(180, 280) },
   { id: 6, bgColor: "#FFCDD2", height: getRandomNumber(120, 180), width: getRandomNumber(180, 280) },
+  { id: 7, bgColor: "#B0E0E6", height: getRandomNumber(120, 180), width: getRandomNumber(180, 280) },
 ];
 
 function getRandomNumber(min, max) {

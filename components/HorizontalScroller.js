@@ -22,6 +22,7 @@ export default HorizontalScroller;
 const styles = StyleSheet.create({
   productsView: {
     width: "100%",
+    marginBottom: 10,
   },
   productsTextContainer: {
     width: "100%",
