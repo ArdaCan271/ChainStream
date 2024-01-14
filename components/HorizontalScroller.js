@@ -1,7 +1,7 @@
 import { FlatList, StyleSheet, Text, View } from 'react-native';
 import React from 'react';
 
-const HomeScrollerNew = (props) => {
+const HorizontalScroller = (props) => {
   return (
     <View style={styles.productsView}>
       <View style={styles.productsTextContainer}>
@@ -11,21 +11,21 @@ const HomeScrollerNew = (props) => {
       horizontal={true}
       showsHorizontalScrollIndicator={false}
       data={props.productData}
-      renderItem={props.renderItem}/>
+      renderItem={props.renderItem}
+      contentContainerStyle={{paddingBottom: 5}}/>
     </View>
   );
 }
 
-export default HomeScrollerNew;
+export default HorizontalScroller;
 
 const styles = StyleSheet.create({
   productsView: {
     width: "100%",
-    height: 250,
   },
   productsTextContainer: {
     width: "100%",
-    height: 58,
+    height: 40,
     flexDirection: "row",
     justifyContent: "space-between",
     alignItems: "center",
@@ -34,7 +34,7 @@ const styles = StyleSheet.create({
   },
   productsText:{
     color: "#3a3a3a",
-    fontSize: 16,
+    fontSize: 17,
     fontWeight: "600",
     marginLeft: 6
   },

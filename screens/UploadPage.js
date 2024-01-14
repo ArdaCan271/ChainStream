@@ -54,5 +54,6 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     justifyContent: "space-evenly",
     alignItems: "center",
+    elevation: 5,
   },
 });

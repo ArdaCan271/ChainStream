@@ -7,7 +7,7 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import HomePage from './screens/HomePage';
 import StorePage from './screens/StorePage';
 import LibraryPage from './screens/LibraryPage';
-import ProfilePage from './screens/ProfilePage';
+import AccountPage from './screens/AccountPage';
 import UploadPage from './screens/UploadPage';
 
 import Icon from 'react-native-vector-icons/Ionicons';
@@ -24,7 +24,7 @@ const App = () => {
         
         if (route.name === "Home") {
           iconName = focused ? "home" : "home-outline";
-        } else if (route.name === "Profile") {
+        } else if (route.name === "Account") {
           iconName = focused ? "person" : "person-outline";
         } else if (route.name === "Library") {
           iconName = focused ? "library" : "library-outline";
@@ -46,7 +46,7 @@ const App = () => {
         <Tab.Screen name="Store" component={StorePage}/>
         <Tab.Screen name="Upload" component={UploadPage}/>
         <Tab.Screen name="Library" component={LibraryPage}/>
-        <Tab.Screen name="Profile" component={ProfilePage}/>
+        <Tab.Screen name="Account" component={AccountPage}/>
       </Tab.Navigator>
     </NavigationContainer>
   );
