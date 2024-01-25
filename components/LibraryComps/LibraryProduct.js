@@ -3,7 +3,7 @@ import React from 'react';
 
 import Ionicons from 'react-native-vector-icons/Ionicons';
 
-const StoreProduct = (props) => {
+const LibraryProduct = (props) => {
   return (
     <View style={styles.container}>
       <View style={styles.productDesc}>
@@ -12,9 +12,6 @@ const StoreProduct = (props) => {
         </View>
         <Text numberOfLines={2} style={styles.productText}>Product Name Test #{props.id}</Text>
       </View>
-      <Pressable onPress={props.onAddPress} style={styles.productAddButton}>
-        <Ionicons name="add" size={35} color="white" />
-      </Pressable>
     </View>
   );
 }
@@ -24,7 +21,7 @@ const styles = StyleSheet.create({
     justifyContent: "space-between",
     alignItems: "center",
     width: 165,
-    height: 220,
+    height: 180,
     backgroundColor: "white",
     marginVertical: 18,
     marginHorizontal: 18,
@@ -47,6 +44,7 @@ const styles = StyleSheet.create({
     width: 145,
     justifyContent: "center",
     alignItems: "center",
+    backgroundColor: "#e2dcef",
     borderWidth: 2,
     borderColor: "#655DBB",
     borderRadius: 10,
@@ -75,4 +73,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default StoreProduct;
+export default LibraryProduct;

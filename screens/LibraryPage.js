@@ -1,11 +1,34 @@
-//use rnfes but then add ; where needed
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import React, {useState, useEffect} from 'react';
+import { StyleSheet, Text, View, FlatList } from 'react-native';
 
-const LibraryPage = () => {
+import Searchbox from '../components/Searchbox';
+import LibraryProduct from '../components/LibraryComps/LibraryProduct';
+
+const LibraryPage = ({productList}) => {
+
+  useEffect(() => {
+    console.log('Product List has been updated:', productList);
+  }, [productList]);
+  
+  const renderItem = ({ item }) => (
+    <LibraryProduct
+    id={item.id} 
+    backgroundColor={item.backgroundColor}
+    iconColor={item.iconColor}/>
+  );
+
+
   return (
     <View style={styles.container}>
-      <Text style={styles.welcomeText}>Library Page</Text>
+      <Searchbox placeholder="Search in Library"/>
+      <FlatList
+      data={productList}
+      keyExtractor={(item, index) => index.toString()}
+      renderItem={renderItem}
+      contentContainerStyle={styles.productList}
+      showsVerticalScrollIndicator={true}
+      numColumns={2}
+      />
     </View>
   );
 }
@@ -18,11 +41,15 @@ const styles = StyleSheet.create({
     height: "100%",
     width: "100%",
     backgroundColor: "white",
-    justifyContent: "center",
+    justifyContent: "flex-start",
     alignItems: "center",
+    paddingTop: 15,
   },
-  welcomeText: {
-    fontSize: 24,
-    color: "black",
-  }
+  productList: {
+    justifyContent: 'flex-start',
+    alignItems: 'flex-start',
+    backgroundColor: 'white',
+    paddingTop: 10,
+    paddingBottom: 150,
+  },
 });
