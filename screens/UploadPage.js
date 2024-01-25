@@ -13,7 +13,7 @@ const UploadPage = () => {
         </View>
         <Pressable style={styles.uploadButton}>
           <Ionicons name="arrow-up-circle-outline" size={24} color="white" />
-          <Text style={{fontSize: 18, fontWeight: "500", marginLeft: -12}}>Upload</Text>
+          <Text style={{fontSize: 18, fontWeight: "500", marginLeft: -12, color: "white"}}>Upload</Text>
         </Pressable>
       </View>
     </View>
