@@ -92,6 +92,10 @@ contract ChainStreamContract {
         products[productId].salesAmount--;
     }
 
+    function sendEth(uint256 amount, address payable receiver) public payable{
+        receiver.transfer(amount);
+    }
+
     function selledProducts() public view returns (address[] memory) {
         address[] memory selledProductsList = new address[](sells.length);
         for (uint256 i = 0; i < sells.length; i++) {

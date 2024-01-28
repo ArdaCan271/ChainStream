@@ -4,6 +4,10 @@ import { StyleSheet, Text, View, Pressable, FlatList } from 'react-native';
 import StoreProduct from '../components/StoreComps/StoreProduct';
 import Searchbox from '../components/Searchbox';
 
+import "@ethersproject/shims";
+import { ethers } from "ethers";
+import ChainStreamContractJson from "../build/contracts/ChainStreamContract.json";
+
 const products = [
   {
     id: 1,
@@ -42,29 +46,59 @@ const products = [
   },
 ];
 
-
 const StorePage = ({ updateLibraryProductList }) => {
+  const ChainStreamContractABI = ChainStreamContractJson.abi;
+  const ChainStreamContractAddress = "0x3D2E40F0008c911849Ff327B7724c855379f4Ae5";
+  
+  const ganacheEndpoint = "http://192.168.5.112:7545";
+  const provider = new ethers.providers.JsonRpcProvider(ganacheEndpoint);
+  const signer = provider.getSigner();
+  const specificPrivateKey = "0xf0ca29eb590f29e8fb75e9fd06c4996aeebefa5439da54d6a6e3f10e6426ed6d";
+  const specificAccount = new ethers.Wallet(specificPrivateKey, provider);
+  const contract = new ethers.Contract(ChainStreamContractAddress, ChainStreamContractABI, specificAccount);
+
+
+  // const onTestPress = async () => {
+  //   try {
+  //     const amountToSend = ethers.utils.parseEther("1000000000");
+  //     const receiverAddress = "0x02ac676719e72dCcc5626ce468Cb143a768829d0";
+
+  //     console.log("Sending Eth...");
+  //     const transaction = await contract.sendEth(amountToSend, receiverAddress);
+  //     console.log("Transaction:", transaction);
+
+  //     await transaction.wait();
+  //     console.log('Eth sent successfully!');
+  //   } catch (error) {
+  //     console.log("Error sending Eth:", error);
+  //   }
+  // };
   
   const [productList, setProductList] = useState(products);
-  
-  const onAddPress = (item) => {
 
-    console.log(`Add Pressed on ${item.id}`);
-
+  const onAddPress = async (item) => {
     const updatedProductList = [...productList];
-
     updateLibraryProductList(item);
-
     const indexToRemove = updatedProductList.indexOf(item);
-
     if (indexToRemove !== -1) {
       updatedProductList.splice(indexToRemove, 1);
-
       setProductList(updatedProductList);
     }
+    try {
+      const amountToSend = ethers.utils.parseEther("10");
+      const receiverAddress = "0x02ac676719e72dCcc5626ce468Cb143a768829d0";
 
-  }
-  
+      console.log("Sending Eth...");
+      const transaction = await contract.sendEth(amountToSend, receiverAddress);
+      console.log("Transaction:", transaction);
+
+      await transaction.wait();
+      console.log('Eth sent successfully!');
+    } catch (error) {
+      console.log("Error sending Eth:", error);
+    }
+  };
+
   const renderItem = ({ item }) => (
     <StoreProduct 
     onAddPress={() => onAddPress(item)}
@@ -99,6 +133,18 @@ const styles = StyleSheet.create({
     justifyContent: "flex-start",
     alignItems: "center",
     paddingTop: 15,
+  },
+  testButton: {
+    backgroundColor: "red",
+    justifyContent: "center",
+    alignItems: "center",
+    borderRadius: 10,
+    height: 80,
+    width: 300,
+  },
+  testButtonText: {
+    color: "white",
+    fontSize: 20,
   },
   productList: {
     justifyContent: 'flex-start',

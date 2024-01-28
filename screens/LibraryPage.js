@@ -5,10 +5,6 @@ import Searchbox from '../components/Searchbox';
 import LibraryProduct from '../components/LibraryComps/LibraryProduct';
 
 const LibraryPage = ({productList}) => {
-
-  useEffect(() => {
-    console.log('Product List has been updated:', productList);
-  }, [productList]);
   
   const renderItem = ({ item }) => (
     <LibraryProduct
