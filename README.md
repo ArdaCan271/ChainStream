@@ -1,6 +1,6 @@
 ChainStream
 
-A prototype blockchain file streaming app. It has a demo store that is connected with a transaction function written in Solidity. When a user adds a product from the store to their library, the app creates a transaction in the blockchain.
+A prototype for blockchain file streaming app. It has a demo store that is connected with a transaction function written in Solidity. When a user adds a product from the store to their library, the app creates a transaction in the blockchain.
 
 Here are some previews:
 
